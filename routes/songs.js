@@ -8,6 +8,8 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 router.get('/', songsCtrl.index);
 // GET /songs/new
 router.get('/new', ensureLoggedIn , songsCtrl.new);
+// GET /songs/:id 
+router.get('/:id', songsCtrl.show)
 // POST /movies
 router.post('/', ensureLoggedIn, songsCtrl.create);
 
