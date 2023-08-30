@@ -10,7 +10,7 @@
     <form id="add-comment-form" method="POST"
     action="/songs/<%= song._id %>/comments">
     <label>Comment:</label>
-    <textarea name="text"></textarea>
+    <textarea name="comment"></textarea>
     <input type="submit" value="Add Comment">
 </form>
 
@@ -34,14 +34,10 @@
                         <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
                             <button type="submit">DELETE</button>
                         </form>
-                 <%   } %>
+                 <% } %>
                 </td>
              </tr>
           <%  }); %>
-          <tr>
-            <td colspan="3"></td>
-            <td><strong><%= (total / song.comments.length).toFixed(1) %></strong></td>
-          </tr>
         </tbody>
     </table>
     <% } else { %>

@@ -6,7 +6,7 @@ module.exports = {
 };
 
 async function deleteComment(req, res) {
-    const song = await Song.findOne({ 'comments._id': req.params.id, 'reviews.user': req.user._id});
+    const song = await Song.findOne({ 'comments._id': req.params.id, 'comments.user': req.user._id});
     if (!song) return res.redirect('/songs');
     song.comments.remove(req.params.id);
     await song.save();

@@ -2,11 +2,7 @@ const mongoose = require('mongoose');
 // Optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-// const songs = [];
 
-// module.exports = {
-//     getAll
-// }
 
 const commentSchema = new Schema ({
     comment: {
@@ -27,7 +23,7 @@ const commentSchema = new Schema ({
 const songSchema = new Schema ({
     title: {
         type: String,
-
+        required: true
     },
     artist: {
         type: String,
@@ -44,8 +40,5 @@ const songSchema = new Schema ({
     timestamps: true
 });
 
-// function getAll() {
-//     return songs;
-// }
-// Compile schema into a model and export it.
+
 module.exports = mongoose.model('Song', songSchema);
