@@ -2,7 +2,9 @@ const Song = require('../models/song');
 
 module.exports = {
     create,
-    delete: deleteComment
+    delete: deleteComment,
+    edit,
+    update
 };
 
 async function deleteComment(req, res) {
@@ -25,4 +27,45 @@ async function create(req, res) {
         console.log(err);
     }
     res.redirect(`/songs/${song._id}`);
+}
+
+async function edit(req, res) {
+    try {
+        const song = await Song.findOne({ 'comments._id': req.params.id });
+        if (!song) {
+            return res.status(404).send('Comment not found');
+        }
+
+        const comment = song.comments.find(c => c._id.equals(req.params.id));
+        if (!comment) {
+            return res.status(404).send('Comment not found');
+        }
+
+        res.render('comments/edit', { title: 'Edit Comment', comment });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error fetching comment for editing');
+    }
+}
+
+async function update(req, res) {
+    try {
+        const song = await Song.findOne({ 'comments._id': req.params.id });
+        if (!song) {
+            return res.status(404).send('Comment not found');
+        }
+
+        const comment = song.comments.find(c => c._id.equals(req.params.id));
+        if (!comment) {
+            return res.status(404).send('Comment not found');
+        }
+
+        comment.comment = req.body.comment;
+        await song.save();
+
+        res.redirect(`/songs/${song._id}`);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error updating comment');
+    }
 }
