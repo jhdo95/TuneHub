@@ -23,3 +23,9 @@ Technologies Used:
 Getting Started:
 
 ![Index Page](https://i.imgur.com/4ITTVD0.png)
+
+Icebox Items:
+* Implement a song API to allow users to search up songs that no one has posted yet.
+* Add a delete functionality to songs posted to the list.
+* Allow users to update songs and add featured artists.
+* Allow users to listen to the song.
