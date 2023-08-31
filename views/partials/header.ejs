@@ -8,15 +8,18 @@
   <title><%= title %></title>
 </head>
 <body>
-    <nav>
-        <% if (user) { %> 
-      <a href="/songs" <%- title === 'All Songs' ? 'class="active"' : '' %>>ALL SONGS</a> |
-
-      <a href="/songs/new" <%- title === 'Add Song' ? 'class="active"' : '' %>>ADD SONG</a> |
-      <a href="/logout">LOG OUT</a> |
-    <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-    <% } %>
-  </nav>
-  <main>
-    <h1><%= title %></h1>
+    <div class="container">
+    <div class="navbar">
+        <a href="/songs" <%- title === 'All Songs' ? 'class="active"' : '' %>>ALL SONGS</a>
+        <% if (user) { %>
+          <a href="/songs/new" <%- title === 'Add Song' ? 'class="active"' : '' %>>ADD SONG</a>
+          <div class="logout-nav">
+            <a href="/logout">LOG OUT</a>
+          </div>
+        <% } else { %>
+          <div class="login-nav">
+            <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+          </div>
+        <% } %>
+      </div>
+      

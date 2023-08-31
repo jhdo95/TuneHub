@@ -1,14 +1,20 @@
 <%- include('../partials/header') %>
-<form id="new-song" action="/songs" method="POST">
-    <label>Title:</label>
-    <input type="text" name="title">
-    <label>Artist:</label>
-    <input type="text" name="artist">
-    <label>Release Year:</label>
-    <input type="text" name="releaseYear">
-    <label>Song Duration:</label>
-    <input type="number" name="songDuration" pattern="\d{1,2}:\d{2}" placeholder="mm:ss">
-    <input type="submit" value="Add Song">
-</form>
-
+<div class="main-content">
+    <h2>Add a New Song</h2>
+    <form id="new-song" action="/songs" method="POST">
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="title">
+  
+      <label for="artist">Artist:</label>
+      <input type="text" id="artist" name="artist">
+  
+      <label for="releaseYear">Release Year:</label>
+      <input type="number" id="releaseYear" name="releaseYear">
+  
+      <label for="songDuration">Song Duration (mm:ss):</label>
+      <input type="text" id="songDuration" name="songDuration" pattern="\d{1,2}:\d{2}" placeholder="mm:ss">
+  
+      <input type="submit" value="Add Song">
+    </form>
+</div>
 <%- include('../partials/footer') %>

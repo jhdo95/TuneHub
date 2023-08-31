@@ -1,4 +1,5 @@
 <%- include('../partials/header') %>
+<div class="main-content"></div>
     <section id="show-song">
         <div>Title: <%= song.title %> </div>
         <div>Artist: <%= song.artist %> </div>
@@ -9,7 +10,6 @@
     <h2>Comments</h2>
     <form id="add-comment-form" method="POST"
     action="/songs/<%= song._id %>/comments">
-    <label>Comment:</label>
     <textarea name="comment"></textarea>
     <input type="submit" value="Add Comment">
     </form>
@@ -26,7 +26,10 @@
         <tbody>
             <% song.comments.forEach(function(c){ %>
              <tr>
-                <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer"><%= c.userName %></td>
+                <td class="comment-user">
+                    <img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer">
+                    <%= c.userName %>
+                </td>
                 <td><%= c.createdAt.toLocaleDateString() %></td>
                 <td><%= c.comment %></td>
                 <td>
@@ -36,10 +39,6 @@
                         </form>
                         <a href="/comments/<%= c._id %>/edit">
                             <button>Edit Comment</button>
-                        </a>
-                    <% } else { %>
-                        <a href="/comments/<%= c._id %>/edit">
-                            <button>Update Comment</button>
                         </a>
                  <% } %>
                 </td>

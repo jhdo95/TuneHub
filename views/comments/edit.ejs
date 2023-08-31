@@ -1,9 +1,7 @@
 <%- include('../partials/header') %>
 
 <h2>Edit Comment</h2>
-<form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
-    <label>Edit Comment:</label>
-    <textarea name="comment"><%= comment.comment %></textarea>
+<form action="/comments/<%= comment._id %>?_method=PUT" method="POST">    <textarea name="comment"><%= comment.comment %></textarea>
     <button type="submit">Update Comment</button>
 </form>
 

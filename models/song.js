@@ -27,13 +27,17 @@ const songSchema = new Schema ({
     },
     artist: {
         type: String,
+        required: true
     },
     releaseYear: {
         type: Number,
+        required: true
     },
     songDuration: {
-        type: Number,
+        type: String,
         min: 0,
+        match: /^\d{1,2}:\d{2}$/,
+        required: true
     },
     comments: [commentSchema]
 }, {
