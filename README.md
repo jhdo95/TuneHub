@@ -22,4 +22,4 @@ Technologies Used:
 
 Getting Started:
 
-![Index Page](https://imgur.com/a/RO9XTd6)
+![Index Page](https://imgur.com/4ITTVD0)
