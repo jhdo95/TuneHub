@@ -1,5 +1,5 @@
-# songs-project
-TuneHub - Share and Discuss Your Favorite Tunes:
+# TuneHub
+ Share and Discuss Your Favorite Tunes:
    Welcome to TuneHub, a web application that lets you share your favorite tunes with the world and engage in discussions through comments. Whether you're a music enthusiast or just looking to discover new tracks, TuneHub provides a platform to connect with others who share your musical interests.
 
 Features:
